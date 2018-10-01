@@ -1,6 +1,9 @@
 $(function(){
 
-    var $body = $("body");
+    var $body           = $("body"),
+        $itemContent    = $body.find('.melis-tc-summary-item-content');
+
+        alert('itemContent: ' + $itemContent.length);
 
     var loader = '<div id="loader" class="overlay-loader"><img class="loader-icon spinning-cog" src="/MelisCore/assets/images/cog12.svg" data-cog="cog12"></div>';
 

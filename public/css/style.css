@@ -119,6 +119,11 @@
 .melis-tc-summary-item{
     margin-bottom: 20px;
 }
+/* Added by: Junry @ 10/01/2018 */
+.melis-tc-summary-item h4 {
+    color: #981a1f;
+}
+/* End /added */
 
 .melis-tc-summary-item-content{
     padding-left: 40px;

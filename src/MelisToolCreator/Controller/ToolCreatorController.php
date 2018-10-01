@@ -38,8 +38,8 @@ class ToolCreatorController extends AbstractActionController
         $view = new ViewModel();
 
         // Initializing the Tool creator session container
-        $container = new Container('melistoolcreator');
-        $container['melis-toolcreator'] = array();
+        // $container = new Container('melistoolcreator');
+        // $container['melis-toolcreator'] = array();
 
         return $view;
     }
@@ -103,8 +103,8 @@ class ToolCreatorController extends AbstractActionController
         $view = new ViewModel();
 
         // The steps requested
-        $curStep = $this->params()->fromPost('curStep', 1);
-        $nxtStep = $this->params()->fromPost('nxtStep', 1);
+        $curStep = $this->params()->fromPost('curStep', 7);
+        $nxtStep = $this->params()->fromPost('nxtStep', 7);
         $validate = $this->params()->fromPost('validate', false);
 
         // Current viewModel

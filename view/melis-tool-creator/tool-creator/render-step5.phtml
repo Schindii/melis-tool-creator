@@ -5,15 +5,17 @@
             <p><?php echo $this->translate('tr_melistoolcreator_add_update_form_desc') ?></p>
         </div>
 
-        <?php
-            $form = $this->step5Form;
-            echo $this->form()->openTag($form);
-        ?>
-            <div class="col-sm-12">
-                <?php if ($this->langTblCols) { ?>
-                    <h4><?php echo $this->translate('tr_melistoolcreator_pri_tbl_cols') ?></h4>
-                <?php } ?>
-                <div class="melis-toolcreator-steps-tbl-cols">
+        <div class="col-sm-12">
+
+            <?php
+                $form = $this->step5Form;
+                echo $this->form()->openTag($form);
+            ?>
+
+            <?php if ($this->langTblCols) { ?>
+                <h4><?php echo $this->translate('tr_melistoolcreator_pri_tbl_cols') ?></h4>
+            <?php } ?>
+            <div class="melis-toolcreator-steps-tbl-cols">
                     <div class="widget-body list table-responsive">
                         <table class="table table-striped table-primary">
                             <thead>
@@ -107,12 +109,10 @@
                         </table>
                     </div>
                 </div>
-            </div>
 
             <?php if ($this->langTblCols) { ?>
-                <div class="col-sm-12">
-                    <h4><?php echo $this->translate('tr_melistoolcreator_lang_tbl_cols') ?></h4>
-                    <div class="melis-toolcreator-steps-tbl-cols">
+                <h4><?php echo $this->translate('tr_melistoolcreator_lang_tbl_cols') ?></h4>
+                <div class="melis-toolcreator-steps-tbl-cols">
                         <div class="widget-body list table-responsive">
                             <table class="table table-striped table-primary">
                                 <thead>
@@ -220,11 +220,11 @@
                             </table>
                         </div>
                     </div>
-                </div>
             <?php } ?>
         <?php
             echo $this->form()->closeTag();
         ?>
+        </div>
     </div>
 
     <button class="btn btn-default btn-steps" data-curstep="5" data-nxtstep="4"><?php echo $this->translate('tr_melistoolcreator_back') ?></button>

@@ -34,6 +34,7 @@
 
                                         $val->setLabelOptions(array('disable_html_escape' => true));
                                         $required = $val->getAttribute('required') ? ' *' : '';
+                                        $val->setLabelAttributes(array('class' => 'd-flex flex-row justify-content-between'));
                                         $label = $val->getLabel().$required.'<i class="fa fa-info-circle fa-lg pull-right tip-info" data-toggle="tooltip" data-placement="left" title="" data-original-title="'.$val->getOption('tooltip').'"></i>';
 
                                         $val->setLabel($label);

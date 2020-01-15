@@ -13,7 +13,7 @@
                 <?php if ($key == 'step1'){ ?>
                     <h2><?php echo $step['tcf-name'] ?></h2>
                 <?php } elseif ($key == 'step2') { ?>
-                    <table class="table table-striped table-primary">
+                    <table class="table table-striped table-primary table-sm">
                         <thead>
                             <tr>
                                 <th><?php $this->translate('tr_melistoolcreator_texts_title') ?></th>
@@ -31,7 +31,7 @@
 
                         foreach ($cols As $col){
                             echo '<tr>';
-                            echo '<th>' . $this->translate('tr_melistoolcreator_' . $col) . '</th>';
+                            echo '<td><b>' . $this->translate('tr_melistoolcreator_' . $col) . '</b></td>';
 
                             foreach ($this->languages As $lang){
 
@@ -56,7 +56,7 @@
                         <p><i class="fa fa-key fa-lg fa-rotate-90"></i> <?php echo $this->priCol ?></p>
                     <?php }else{ ?>
                         <div class="table-responsive">
-                            <table class="table table-striped table-primary table-bordered">
+                            <table class="table table-striped table-primary table-sm table-bordered">
                                 <thead>
                                     <tr>
                                         <th><?php echo $this->translate('tr_melistoolcreator_pri_tbl') ?></th>
@@ -79,7 +79,7 @@
                     <?php } ?>
                 <?php } elseif ($key == 'step4') {?>
                     <div class="table-responsive">
-                        <table class="table table-striped table-primary table-bordered">
+                        <table class="table table-striped table-primary table-sm table-bordered">
                             <thead>
                             <tr>
                                 <?php
@@ -100,7 +100,7 @@
                     </div>
                 <?php } elseif ($key == 'step5') { ?>
                     <div class="table-responsive">
-                        <table class="table table-striped table-primary">
+                        <table class="table table-striped table-primary table-sm">
                             <thead>
                                 <tr>
                                     <th><?php echo $this->translate('tr_melistoolcreator_columns') ?></th>
@@ -120,7 +120,7 @@
                                     $cVol = str_replace('tclangtblcol_', '', $cVol);
 
                                     echo '<tr>';
-                                    echo '<th>' . $cVol . '</th>';
+                                    echo '<td><b>' . $cVol . '</b></td>';
                                     echo '<td>' . $isRequired . '</td>';
                                     echo '<td>' . $fieldType[$cKey] . '</td>';
                                     echo '</tr>';
@@ -131,7 +131,7 @@
                 <?php } elseif ($key == 'step6') { ?>
 
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-primary">
+                        <table class="table table-striped table-bordered table-primary table-sm">
                             <thead>
                                 <tr>
                                     <th><?php echo $this->translate('tr_melistoolcreator_lang_txt') ?></th>
@@ -168,7 +168,7 @@
                                                     if ($rwCtr < 1)
                                                         $rwCols .= '<th rowspan="tcrowctr"><h3>'.$lang['lang_name'].'</h3></th>';
 
-                                                    $rwCols .= '<th>'.$colName.'</th>';
+                                                    $rwCols .= '<td><b>'.$colName.'</b></td>';
                                                     $rwCols .= '<td>'.$cVal.'</td>';
 
                                                     $desc = !empty($tVal[$colKeyPrefx.$colName.'_tcinputdesc']) ? $tVal[$colKeyPrefx.$colName.'_tcinputdesc'] : '-';
@@ -192,7 +192,6 @@
                 <?php } ?>
             </div>
         </div>
-        <hr>
     <?php } ?>
     <button class="btn btn-default btn-steps" data-curstep="7" data-nxtstep="6"><?php echo $this->translate('tr_melistoolcreator_back') ?></button>
     <button class="btn btn-default pull-right btn-steps tcf-validate" data-curstep="7" data-nxtstep="8"><?php echo $this->translate('tr_melistoolcreator_next') ?></button>

@@ -11,6 +11,7 @@
                 <?php
                     $moduleField = $form->get('tcf-name');
                     $moduleField->setLabelOptions(array('disable_html_escape' => true));
+                    $moduleField->setLabelAttributes(array('class' => 'd-flex flex-row justify-content-between'));
                     $label = $moduleField->getLabel().' *<i class="fa fa-info-circle fa-lg pull-right tip-info" data-toggle="tooltip" data-placement="left" title="" data-original-title="'.$moduleField->getOption('tooltip').'"></i>';
                     $moduleField->setLabel($label);
                     echo $this->formLabel($moduleField);
@@ -22,7 +23,8 @@
                 <?php
                     $typeField = $form->get('tcf-tool-type');
                     $inputLabel = $typeField->getLabelAttributes();
-                    $typeField->setLabelAttributes(array('class', null));
+//                    $typeField->setLabelAttributes(array('class', null));
+                    $typeField->setLabelAttributes(array('class' => 'd-flex flex-row justify-content-between'));
                     $label = $typeField->getLabel().'<i class="fa fa-info-circle fa-lg pull-right tip-info" data-toggle="tooltip" data-placement="left" title="" data-original-title="'.$typeField->getOption('tooltip').'"></i>';
                     $typeField->setLabel($label);
                     echo $this->formLabel($typeField);

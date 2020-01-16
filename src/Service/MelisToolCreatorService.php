@@ -924,12 +924,10 @@ class MelisToolCreatorService  implements  ServiceLocatorAwareInterface
         $tcfDbTbl = $container['melis-toolcreator'];
         $moduleName = $this->moduleName();
 
-        if (is_null($fileContent))
-            $fileContent = $this->fgc($sourceDir);
-
         $fileContent = str_replace('ModuleTpl', $moduleName, $fileContent);
         $fileContent = str_replace('moduleTpl', lcfirst($moduleName), $fileContent);
         $fileContent = str_replace('moduletpl', strtolower($moduleName), $fileContent);
+        $fileContent = str_replace('MODULETPL', strtoupper($moduleName), $fileContent);
 
         if ($this->hasLanguage())
             $fileContent = $this->sp('tclangtblcol_', '', $fileContent);

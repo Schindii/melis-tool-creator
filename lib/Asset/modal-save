@@ -39,6 +39,9 @@
                     melisHelper.highlightMultiErrors(data.success, data.errors, "#id_moduletpl_modal");
                 }
 
+                // Reload notification bell
+                melisCore.flashMessenger();
+
                 btn.attr('disabled', false);
             }).fail(function () {
                 alert(translations.tr_meliscore_error_message);

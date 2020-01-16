@@ -45,6 +45,9 @@
                     melisHelper.highlightMultiErrors(data.success, data.errors, "#"+id+"_id_moduletpl_properties_content");
                 }
 
+                // Reload notification bell
+                melisCore.flashMessenger();
+
                 btn.attr('disabled', false);
 
             }).fail(function () {

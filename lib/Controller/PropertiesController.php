@@ -73,6 +73,9 @@ class PropertiesController extends AbstractActionController
             $response['entryTitle'] = $entryTitle;
         }
 
+        $logSrv = $this->getServiceLocator()->get('MelisCoreLogService');
+        $logSrv->logAction($success, $textTitle, $textMessage, 'MELIS_TOOL_MODULETPL_SAVE', $id);
+
         return new JsonModel($response);
     }
 
@@ -144,6 +147,13 @@ class PropertiesController extends AbstractActionController
         if (!empty($queryData['id'])){
             $moduleTplService = $this->getServiceLocator()->get('ModuleTplService');
             $moduleTplService->deleteItem($queryData['id']);
+
+            $translator = $this->getServiceLocator()->get('translator');
+            $textTitle = $translator->translate('tr_moduletpl_title');
+            $textMessage = $translator->translate('tr_moduletpl_delete_success');
+
+            $logSrv = $this->getServiceLocator()->get('MelisCoreLogService');
+            $logSrv->logAction(1, $textTitle, $textMessage, 'MELIS_TOOL_MODULETPL_DELETE', $queryData['id']);
         }
     }
 
